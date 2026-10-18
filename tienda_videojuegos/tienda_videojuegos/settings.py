@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'home',
     'catalogo',
     'buscador',
-    'usuarios',    
+    'usuarios',
+    'carrito',   
 ]
 
 MIDDLEWARE = [
@@ -65,6 +66,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'carrito.context_processors.carrito_total',
             ],
         },
     },
@@ -123,7 +125,7 @@ STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
 
-AUTH_USER_MODEL = 'usuarios.Usuario'
+
 LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'login'
