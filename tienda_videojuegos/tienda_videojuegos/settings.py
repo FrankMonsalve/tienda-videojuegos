@@ -37,8 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'catalogo',
     'home',
+    'catalogo',
+    'buscador',
+    'usuarios',    
 ]
 
 MIDDLEWARE = [
@@ -56,7 +58,7 @@ ROOT_URLCONF = 'tienda_videojuegos.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'tienda_videojuegos' / 'templates'],  #DIRECTORIO DE TEMPLATES GLOBALES
+        'DIRS': [BASE_DIR / 'templates'],  #DIRECTORIO DE TEMPLATES GLOBALES
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -121,6 +123,10 @@ STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
 
+AUTH_USER_MODEL = 'usuarios.Usuario'
+LOGIN_URL = 'login'
+LOGIN_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = 'login'
 
 # Email
 # https://docs.djangoproject.com/en/6.1/topics/email/#topic-email-configuration
