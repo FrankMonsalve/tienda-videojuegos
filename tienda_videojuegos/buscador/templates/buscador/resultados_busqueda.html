@@ -13,7 +13,7 @@
         <div class="col-md-4 mb-3">
             <div class="card h-100 shadow-sm">
                 <a href="{% url 'catalogo:detalle_juego' juego.id %}" class="text-decoration-none text-body">
-                    <img src="{% static 'img/portadas/'|add:juego.imagen %}" class="card-img-top"
+                    <img src="{% static 'img/portadas/'|add:juego.img %}" class="card-img-top"
                         alt="{{ juego.nombre }}">
                     <div class="card-body text-start">
                         <h5 class="card-title">{{ juego.nombre }}</h5>
